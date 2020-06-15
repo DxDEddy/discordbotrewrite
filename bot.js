@@ -109,6 +109,11 @@ if(msg.channel.type === "dm") {
 	sendUserAMessage(eddyUserID,"I received a message from: "+msg.author.toString()+" they sent:\n "+msg.content)
 };
 
+//Ping - FINISHED
+if (message == "ping") {
+	msg.reply("pong")
+	msg.react("👌");
+}
 
 //Deanbarry video feed code -- FINISHED
 if (message.substring(0,1) == "!" && msg.author.id == "239399070454644736") {
