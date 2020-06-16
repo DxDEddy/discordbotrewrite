@@ -29,8 +29,18 @@ const noncereactionpictures = ['https://i.imgur.com/oLbf1Yn.png','https://i.imgu
 //Liam, Me, Spaghett, Milos, Lain
 const deanbarryVideoFeedIDArray = ['380045599724142594','239399070454644736','362256312626708481','477631074458140674','314318021680300032']
 
-//Angela, Eddy, Jack, Liam 
-const deanbarryPictureSubscriptionIDArray = ['239414210277277708','239399070454644736','402881756656566292', '380045599724142594']
+//Angela, Eddy, Jack, Liam, Lain
+const deanbarryPictureSubscriptionIDArray = ['239414210277277708','239399070454644736','402881756656566292', '380045599724142594','508070749748068367']
+//Lain, Me
+const tempDeanbarryPictureSubscriptionIDArray = ['239399070454644736']
+const noImportantValePictureSubscriptionIDArray = ['508070749748068367']
+
+//Array of profile pics for the bot
+const deanBarryPictureArray = ['https://i.imgur.com/ZGG1coY.jpg','https://i.imgur.com/GkKHZ6g.jpg','https://i.imgur.com/7eaxzyF.jpg','https://i.imgur.com/x9YI637.jpg','https://i.imgur.com/U3ndiif.jpg','https://i.imgur.com/lojVszj.jpg','https://i.imgur.com/YXT77gT.jpg','https://i.imgur.com/41YgnKX.jpg','https://i.imgur.com/etqbkJF.jpg','https://i.imgur.com/CzZYE8V.jpg','https://i.imgur.com/w7p2evs.jpg','https://i.imgur.com/yN0lGPm.jpg','https://i.imgur.com/itoJLCz.jpg','https://i.imgur.com/2HnqLR0.jpg','https://i.imgur.com/HvzOwaX.jpg','https://i.imgur.com/iQhr0hh.jpg','https://i.imgur.com/fOyleut.jpg','https://i.imgur.com/r8Opgti.jpg','https://i.imgur.com/s29yllp.png','https://i.imgur.com/nei8JNb.jpg','https://i.imgur.com/Z2LIEbx.jpg','https://i.imgur.com/XWWc1Fk.jpg','https://i.imgur.com/nGICHOP.jpg','https://i.imgur.com/9uPaJHW.jpg','https://i.imgur.com/Ec690T2.jpg','https://i.imgur.com/F3koQ6V.jpg','https://i.imgur.com/rWzWmev.jpg','https://i.imgur.com/kYW2VSR.jpg','https://i.imgur.com/1LWEy2Y.jpg','https://i.imgur.com/itm7huY.jpg','https://i.imgur.com/y91eeym.jpg','https://i.imgur.com/8s9ffkN.jpg','https://i.imgur.com/O5OWBlk.jpg','https://i.imgur.com/g3aK5oS.jpg','https://i.imgur.com/nABAcmj.jpg','https://i.imgur.com/OOBBruh.jpg','https://i.imgur.com/KGuITtN.jpg','https://i.imgur.com/klO5b3u.jpg','https://i.imgur.com/5iYVmxG.jpg','https://i.imgur.com/TvuDmCS.jpg','https://i.imgur.com/X6ay2pk.jpg','https://i.imgur.com/NfReQRR.jpg','https://i.imgur.com/uvKOLUW.png','https://i.imgur.com/NHs44Bi.png','https://i.imgur.com/kLkgrJZ.png','https://i.imgur.com/QIyXPnu.png','https://i.imgur.com/rhsTuiA.png','https://i.imgur.com/UzkInUS.png','https://i.imgur.com/UzkInUS.png','https://i.imgur.com/x3Z4RJb.png','https://i.imgur.com/etzJWwt.png','https://i.imgur.com/Kixu5xo.png','https://i.imgur.com/frG7xmQ.png','https://i.imgur.com/9EPabKn.png','https://i.imgur.com/XUZHw5B.png','https://i.imgur.com/X2BTB6E.png']
+const messagearray = ["felt cute - might delete later","Look at the animation","jojo day!","The world is truly going though the ringer right now.","Stay well and wash your damn hands.","Enjoy..."]
+
+const statusTypeArray = ["WATCHING","PLAYING","PLAYING","PLAYING","PLAYING","WATCHING","WATCHING","WATCHING","WATCHING","WATCHING","WATCHING","WATCHING"]
+const statusValueArray = ["Hentai","in the road","with myself","Animal Crossing: New Horizons","Dark Souls: Remastered","Promised Neverland","Steins;Gate","JoJo: DIU","Astra: Lost in Space","RvB","My Hero Academia","Berserk"]
 
 /*
  * 
@@ -40,9 +50,11 @@ const deanbarryPictureSubscriptionIDArray = ['239414210277277708','2393990704546
 */
 
 //Will add this later
-const deanBarryPictureArray = []
 
+var quote;
+var image;
 
+var roll;
 
 var i;
 
@@ -54,7 +66,7 @@ var i;
  *
 */
 
-
+ 
 
 /*
  * 
@@ -62,6 +74,28 @@ var i;
  *
 */
 
+function deanSetProfile () {
+
+	client.user.setAvatar(deanBarryPictureArray[generateRandomNumber(deanBarryPictureArray.length)])
+
+	roll = generateRandomNumber(statusTypeArray.length)
+
+	client.user.setActivity(statusValueArray[roll], {type: statusTypeArray[roll]});
+
+}
+
+function sendOutDBPicture (pictureArray,messageArray,idArray) {
+	var image = pictureArray[generateRandomNumber(pictureArray.length)]
+	var quote = messageArray[generateRandomNumber(messageArray.length)]
+	for (i = 0; i < idArray.length; i++) {
+
+	var embedImage = new Discord.MessageEmbed()
+		.setTitle(quote)
+		.attachFiles(image)
+		//.setImage(image)
+	sendUserAMessage(idArray[i],embedImage)
+	}
+}
 
 function generateRandomNumber (ceilingValue) {
 	return Math.floor(Math.random() * ceilingValue)
@@ -77,11 +111,6 @@ function sendChannelAMessage (id, content) {
 	channel.send(content)
 }
 
-function sendEddyAMessage (content) {
-	var channel = client.channels.cache.get("239399070454644736")
-	channel.send(content)
-}
-
 /*
  * 
  * The majority of the logic will go here
@@ -92,8 +121,24 @@ function sendEddyAMessage (content) {
 
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
+	
+	//const bot = new Discord.Client({disableEveryone: False});
+
 	console.log("Ready")
+	
+	sendUserAMessage(eddyUserID,"Logged is as: "+client.user.tag)
+
+	//sendOutDBPicture (deanBarryPictureArray,messagearray,tempDeanbarryPictureSubscriptionIDArray)
+	setInterval(sendOutDBPicture, 52400000, deanBarryPictureArray,messagearray,deanbarryPictureSubscriptionIDArray)
+
+	//setInterval(sendUserAMessage,10000,eddyUserID,"test")
+
+	deanSetProfile()
+	setInterval(deanSetProfile, 5600100)
+
 });
+
+
 
 client.on('message', msg => {
 //Start of message event code
@@ -248,7 +293,7 @@ if (lowerMessage.includes("nonce")) {
 
 client.on("channelCreate", function(channel){
 	var currenttime = date.toTimeString();
-	if (channel.name == "undefined") {
+	if (channel.name == "undefined" || channel.name == undefined) {
 		return;
 	} else{
 	sendUserAMessage("239399070454644736","	- A " + channel.type + " channel called: \"" + channel.name + "\" was created. The time was: "+ currenttime + "\n-----------------------\n")
@@ -263,15 +308,20 @@ client.on("channelDelete", function(channel){
 }});
 
 client.on("guildMemberRemove", function(member){
+	var currenttime = date.toTimeString();
 	sendUserAMessage("239399070454644736","Someone left or was kicked. " + member.user.username + " - the time was: " + currenttime)
+	sendChannelAMessage("494651540561330217","Someone left or was kicked, their username was: " + member.user.username + " - the time was: " + currenttime)
 });
 
 client.on("guildMemberUpdate", function(oldMember, newMember){
+	var currenttime = date.toTimeString();
 	sendUserAMessage("239399070454644736","Someone changed something about their profile...\n Their old username was/is: " + oldMember.user.username + " / " + newMember.user.username + ". Their nickname was/is: " + oldMember.nickname + " / " + newMember.nickname + ". Their presence was/is: " + oldMember.presence + " / " + newMember.presence + ". The time was: " + currenttime)
 });
 
 client.on("messageDelete",  function(message) {
+	var currenttime = date.toTimeString();
 	sendUserAMessage("239399070454644736","A message was deleted... It's content was: \n\"" + message.content + "\"\nIt was sent at: " + message.createdAt + ". It was sent by User: " + message.author.username + " In channel: " + message.channel.name)
 });
+
 
 client.login(config.token);
