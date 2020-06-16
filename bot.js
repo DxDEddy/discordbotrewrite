@@ -42,6 +42,8 @@ const messagearray = ["felt cute - might delete later","Look at the animation","
 const statusTypeArray = ["WATCHING","PLAYING","PLAYING","PLAYING","PLAYING","WATCHING","WATCHING","WATCHING","WATCHING","WATCHING","WATCHING","WATCHING"]
 const statusValueArray = ["Hentai","in the road","with myself","Animal Crossing: New Horizons","Dark Souls: Remastered","Promised Neverland","Steins;Gate","JoJo: DIU","Astra: Lost in Space","RvB","My Hero Academia","Berserk"]
 
+const cheersdean = ['cheers dean','cheersdean','thanks dean','thanksdean','arigato dean','arigatodean']
+
 /*
  * 
  * section .bss
@@ -175,7 +177,7 @@ if(message == "russianroulette" || message == "russian roulette") {
 }
 
 //Cheers Dean code -- FINISHED
-if ("cheers dean".includes(message) || "cheersdean".includes(message) || "thanks dean".includes(message) || "thanksdean".includes(message) || "arigatodean".includes(message) || "arigato dean".includes(message)) {
+if (cheersdean.includes(lowerMessage)) {
 	msg.reply(`
 		https://www.patreon.com/deanbarry/posts
 		https://www.youtube.com/user/deanbarry1971
