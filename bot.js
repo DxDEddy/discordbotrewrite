@@ -317,8 +317,9 @@ client.on("guildMemberRemove", function(member){
 
 client.on("guildMemberUpdate", function(oldMember, newMember){
 	var currenttime = date.toTimeString();
+	if(oldMember.user.username != "DeanBot") {
 	sendUserAMessage("239399070454644736","Someone changed something about their profile...\n Their old username was/is: " + oldMember.user.username + " / " + newMember.user.username + ". Their nickname was/is: " + oldMember.nickname + " / " + newMember.nickname + ". Their presence was/is: " + oldMember.presence + " / " + newMember.presence + ". The time was: " + currenttime)
-});
+}});
 
 client.on("messageDelete",  function(message) {
 	var currenttime = date.toTimeString();
