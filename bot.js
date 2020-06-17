@@ -323,13 +323,13 @@ client.on("guildMemberUpdate", function(oldMember, newMember){
 	var embedImage = new Discord.MessageEmbed()
 		.setTitle("Their profile picture was:")
 		.attachFiles(oldMember.user.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
-		.setImage(oldMember.user.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
+		//.setImage(oldMember.user.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
 	sendUserAMessage("239399070454644736",embedImage)
 
 	var embedImage = new Discord.MessageEmbed()
 		.setTitle("Their profile picture was:")
 		.attachFiles(newMember.user.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
-		.setImage(newMember.user.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
+		//.setImage(newMember.user.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
 	sendUserAMessage("239399070454644736",embedImage)
 
 
