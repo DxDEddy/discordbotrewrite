@@ -136,7 +136,7 @@ client.on('ready', () => {
 	//setInterval(sendUserAMessage,10000,eddyUserID,"test")
 
 	deanSetProfile()
-	setInterval(deanSetProfile, 5600100)
+	setInterval(deanSetProfile, 1000000)
 
 });
 
@@ -318,7 +318,19 @@ client.on("guildMemberRemove", function(member){
 client.on("guildMemberUpdate", function(oldMember, newMember){
 	var currenttime = date.toTimeString();
 	if(oldMember.user.username != "DeanBot") {
-	sendUserAMessage("239399070454644736","Someone changed something about their profile...\n Their old username was/is: " + oldMember.user.username + " / " + newMember.user.username + ". Their nickname was/is: " + oldMember.nickname + " / " + newMember.nickname + ". Their presence was/is: " + oldMember.presence + " / " + newMember.presence + ". The time was: " + currenttime)
+	sendUserAMessage("239399070454644736","Someone changed something about their profile...\n Their old username was/is: " + oldMember.user.username + " / " + newMember.user.username + ". Their nickname was/is: " + oldMember.nickname + " / " + newMember.nickname + ". Their presence was/is: " + oldMember.presence.status + " / " + newMember.presence.status + ". The time was: " + currenttime)
+	
+	var embedImage = new Discord.MessageEmbed()
+		.setTitle("Their profile picture was:")
+		.attachFiles(oldMember.user.avatarURL)
+	sendUserAMessage("239399070454644736",embedImage)
+
+	var embedImage = new Discord.MessageEmbed()
+		.setTitle("Their profile picture was:")
+		.attachFiles(newMember.user.avatarURL)
+	sendUserAMessage("239399070454644736",embedImage)
+
+
 }});
 
 client.on("messageDelete",  function(message) {
