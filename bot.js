@@ -251,7 +251,7 @@ if (lowerMessage === "vibe check") {
 		var embedImage = new Discord.MessageEmbed()
 			.setTitle("YOU HAVE FAILED THE VIBE CHECK - GIVE ME YOUR PENIS LICENSE")
 			.attachFiles(vibearray[imageRoll])
-			.setImage(vibearray[imageRoll])
+			//.setImage(vibearray[imageRoll])
 		msg.reply(embedImage)
 		msg.react('👌');
 
@@ -260,7 +260,7 @@ if (lowerMessage === "vibe check") {
 		var embedImage = new Discord.MessageEmbed()
 			.setTitle("I WILL NOW PERFORM COCK AND BALL TORTURE ON THE EPIC LOSER")
 			.attachFiles(vibearray[imageRoll])
-			.setImage(vibearray[imageRoll])
+			//.setImage(vibearray[imageRoll])
 		msg.reply(embedImage)
 		msg.react('👌');
 	}
