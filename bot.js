@@ -315,6 +315,7 @@ client.on("guildMemberRemove", function(member){
 	sendChannelAMessage("494651540561330217","Someone left or was kicked, their username was: " + member.user.username + " - the time was: " + currenttime)
 });
 
+/*
 client.on("guildMemberUpdate", function(oldMember, newMember){
 	var currenttime = date.toTimeString();
 	if(oldMember.user.username != "DeanBot") {
@@ -332,8 +333,8 @@ client.on("guildMemberUpdate", function(oldMember, newMember){
 		//.setImage(newMember.user.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
 	sendUserAMessage("239399070454644736",embedImage)
 
-
 }});
+*/
 
 client.on("messageDelete",  function(message) {
 	var currenttime = date.toTimeString();
