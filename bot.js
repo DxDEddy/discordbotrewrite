@@ -192,8 +192,8 @@ if (cheersdean.includes(lowerMessage)) {
 if (message == "welcome") {
 	var embedImage = new Discord.MessageEmbed()
 		.setTitle('WELCOME TO DXD CLAN')
-		//.attachFiles("https://i.imgur.com/0SnJEMv.png")
-		.setImage("https://i.imgur.com/0SnJEMv.png")
+		.attachFiles("https://i.imgur.com/0SnJEMv.png")
+		//.setImage("https://i.imgur.com/0SnJEMv.png")
 	msg.reply(embedImage)
 	msg.react("👌");
 }
@@ -202,8 +202,8 @@ if (message == "welcome") {
 if (creativearray.includes(lowerMessage)) {
 	var embedImage = new Discord.MessageEmbed()
 		.setTitle("I\'m feeling creative ")
-		//.attachFiles(artarray[generateRandomNumber(artarray.length)])
-		.setImage(artarray[generateRandomNumber(artarray.length)])
+		.attachFiles(artarray[generateRandomNumber(artarray.length)])
+		//.setImage(artarray[generateRandomNumber(artarray.length)])
 	msg.reply(embedImage)
 	msg.react("👌");
 }
@@ -218,8 +218,8 @@ if (lowerMessage.includes("nigge")) {
 if (lowerMessage.includes("coom") || lowerMessage.includes(" coom ") || lowerMessage.includes(" coomer ")) {
 	var embedImage = new Discord.MessageEmbed()
 		.setTitle("COOMER SPOTTED")
-		//.attachFiles('https://i.imgur.com/IHvRQvG.png')
-		.setImage('https://i.imgur.com/IHvRQvG.png')
+		.attachFiles('https://i.imgur.com/IHvRQvG.png')
+		//.setImage('https://i.imgur.com/IHvRQvG.png')
 	msg.reply(embedImage)
 	msg.react('👌');
 }
@@ -228,8 +228,8 @@ if (lowerMessage.includes("coom") || lowerMessage.includes(" coom ") || lowerMes
 if (lowerMessage.includes("boomer")) {
 	var embedImage = new Discord.MessageEmbed()
 		.setTitle("BOOMER SPOTTED")
-		//.attachFiles('https://i.imgur.com/mY5RGIX.png')
-		.setImage('https://i.imgur.com/mY5RGIX.png')
+		.attachFiles('https://i.imgur.com/mY5RGIX.png')
+		//.setImage('https://i.imgur.com/mY5RGIX.png')
 		msg.reply(embedImage)
 	msg.react('👌');
 }
@@ -250,8 +250,8 @@ if (lowerMessage === "vibe check") {
 	else if (vibeRoll > 1 && vibeRoll < 6) {
 		var embedImage = new Discord.MessageEmbed()
 			.setTitle("YOU HAVE FAILED THE VIBE CHECK - GIVE ME YOUR PENIS LICENSE")
-			//.attachFiles(vibearray[imageRoll])
-			.setImage(vibearray[imageRoll])
+			.attachFiles(vibearray[imageRoll])
+			//.setImage(vibearray[imageRoll])
 		msg.reply(embedImage)
 		msg.react('👌');
 
@@ -259,8 +259,8 @@ if (lowerMessage === "vibe check") {
 	else {
 		var embedImage = new Discord.MessageEmbed()
 			.setTitle("I WILL NOW PERFORM COCK AND BALL TORTURE ON THE EPIC LOSER")
-			//.attachFiles(vibearray[imageRoll])
-			.setImage(vibearray[imageRoll])
+			.attachFiles(vibearray[imageRoll])
+			//.setImage(vibearray[imageRoll])
 		msg.reply(embedImage)
 		msg.react('👌');
 	}
@@ -271,8 +271,8 @@ if (sadArrayPhrases.includes(lowerMessage)) {
 	var sadArrayIndex = generateRandomNumber(sadImageArray.length)
 	var embedImage = new Discord.MessageEmbed()
 		.setTitle("This is so sad...")
-		//.attachFiles(sadImageArray[sadArrayIndex])
-		.setImage(sadImageArray[sadArrayIndex])// - This duplicates Kaneki image for some reason?
+		.attachFiles(sadImageArray[sadArrayIndex])
+		//.setImage(sadImageArray[sadArrayIndex])// - This duplicates Kaneki image for some reason?
 	msg.reply(embedImage)
 	msg.react('👌');
 }
@@ -282,8 +282,8 @@ if (lowerMessage.includes("nonce")) {
 	var nonceIndex = generateRandomNumber(noncereactionpictures.length)
 	var embedImage = new Discord.MessageEmbed()
 		.setTitle("Please take a seat right over there sir...")
-		//.attachFiles(noncereactionpictures[nonceIndex])
-		.setImage(noncereactionpictures[nonceIndex])
+		.attachFiles(noncereactionpictures[nonceIndex])
+		//.setImage(noncereactionpictures[nonceIndex])
 	msg.reply(embedImage)
 	msg.react('👌');
 }
