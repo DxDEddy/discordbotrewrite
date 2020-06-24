@@ -242,6 +242,8 @@ if (lowerMessage === "vibe check") {
 	var vibeRoll = generateRandomNumber(8)
 	var imageRoll = generateRandomNumber(vibearray.length)
 
+	var member = msg.member;
+
 
 	if (vibeRoll == 1) {
 		msg.reply("You have passed the vibe check")
@@ -249,6 +251,7 @@ if (lowerMessage === "vibe check") {
 		// ADDITION - happy image?
 	}
 	else if (vibeRoll > 1 && vibeRoll < 6) {
+		member.voice.kick()
 		var embedImage = new Discord.MessageEmbed()
 			.setTitle("YOU HAVE FAILED THE VIBE CHECK - GIVE ME YOUR PENIS LICENSE")
 			.attachFiles(vibearray[imageRoll])
@@ -258,6 +261,7 @@ if (lowerMessage === "vibe check") {
 
 	}
 	else {
+		member.voice.kick()
 		var embedImage = new Discord.MessageEmbed()
 			.setTitle("I WILL NOW PERFORM COCK AND BALL TORTURE ON THE EPIC LOSER")
 			.attachFiles(vibearray[imageRoll])
