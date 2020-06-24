@@ -236,6 +236,7 @@ if (lowerMessage.includes("boomer")) {
 
 //Vibe check -- FINISHED
 if (lowerMessage === "vibe check") {
+	if (msg.channel.type === "dm") return msg.reply("You cannot do that in DM");
 	if (!msg.guild.me.hasPermission(['MANAGE_CHANNELS', 'MOVE_MEMBERS'])) return msg.reply('Missing the required `Move Members` permission.');
 
 	var vibeRoll = generateRandomNumber(8)
