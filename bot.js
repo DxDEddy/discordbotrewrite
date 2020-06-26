@@ -37,7 +37,6 @@ const deanbarryVideoFeedIDArray = ['380045599724142594','239399070454644736','36
 const deanbarryPictureSubscriptionIDArray = ['239414210277277708','239399070454644736','402881756656566292', '380045599724142594','508070749748068367']
 
 //CEO ID List - Eddy, Jack, Herlander, Ciaran, Liam
-const ceoidlist = ['239399070454644736','402881756656566292','184362101903458306','201045084764897280','380045599724142594']
 
 //Array of profile pics for the bot
 const deanBarryPictureArray = ['https://i.imgur.com/ZGG1coY.jpg','https://i.imgur.com/GkKHZ6g.jpg','https://i.imgur.com/7eaxzyF.jpg','https://i.imgur.com/x9YI637.jpg','https://i.imgur.com/U3ndiif.jpg','https://i.imgur.com/lojVszj.jpg','https://i.imgur.com/YXT77gT.jpg','https://i.imgur.com/41YgnKX.jpg','https://i.imgur.com/etqbkJF.jpg','https://i.imgur.com/CzZYE8V.jpg','https://i.imgur.com/w7p2evs.jpg','https://i.imgur.com/yN0lGPm.jpg','https://i.imgur.com/itoJLCz.jpg','https://i.imgur.com/2HnqLR0.jpg','https://i.imgur.com/HvzOwaX.jpg','https://i.imgur.com/iQhr0hh.jpg','https://i.imgur.com/fOyleut.jpg','https://i.imgur.com/r8Opgti.jpg','https://i.imgur.com/s29yllp.png','https://i.imgur.com/nei8JNb.jpg','https://i.imgur.com/Z2LIEbx.jpg','https://i.imgur.com/XWWc1Fk.jpg','https://i.imgur.com/nGICHOP.jpg','https://i.imgur.com/9uPaJHW.jpg','https://i.imgur.com/Ec690T2.jpg','https://i.imgur.com/F3koQ6V.jpg','https://i.imgur.com/rWzWmev.jpg','https://i.imgur.com/kYW2VSR.jpg','https://i.imgur.com/1LWEy2Y.jpg','https://i.imgur.com/itm7huY.jpg','https://i.imgur.com/y91eeym.jpg','https://i.imgur.com/8s9ffkN.jpg','https://i.imgur.com/O5OWBlk.jpg','https://i.imgur.com/g3aK5oS.jpg','https://i.imgur.com/nABAcmj.jpg','https://i.imgur.com/OOBBruh.jpg','https://i.imgur.com/KGuITtN.jpg','https://i.imgur.com/klO5b3u.jpg','https://i.imgur.com/5iYVmxG.jpg','https://i.imgur.com/TvuDmCS.jpg','https://i.imgur.com/X6ay2pk.jpg','https://i.imgur.com/NfReQRR.jpg','https://i.imgur.com/uvKOLUW.png','https://i.imgur.com/NHs44Bi.png','https://i.imgur.com/kLkgrJZ.png','https://i.imgur.com/QIyXPnu.png','https://i.imgur.com/rhsTuiA.png','https://i.imgur.com/UzkInUS.png','https://i.imgur.com/UzkInUS.png','https://i.imgur.com/x3Z4RJb.png','https://i.imgur.com/etzJWwt.png','https://i.imgur.com/Kixu5xo.png','https://i.imgur.com/frG7xmQ.png','https://i.imgur.com/9EPabKn.png','https://i.imgur.com/XUZHw5B.png','https://i.imgur.com/X2BTB6E.png']
@@ -118,9 +117,12 @@ function sendChannelAMessage (id, content) {
 }
 
 function CEOAlert (content) {
-	for (i = 0; 9 < ceoidlist.length; i++) {
-		sendUserAMessage(ceoidlist[i],content)
-	}
+	//const ceoidlist = ['239399070454644736','402881756656566292','184362101903458306','201045084764897280','380045599724142594']
+	sendUserAMessage("239399070454644736",content)
+	sendUserAMessage("402881756656566292",content)
+	sendUserAMessage("184362101903458306",content)
+	sendUserAMessage("201045084764897280",content)
+	sendUserAMessage("380045599724142594",content)
 }
 
 /*
