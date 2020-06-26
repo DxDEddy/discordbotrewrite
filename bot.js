@@ -422,7 +422,7 @@ client.on("guildMemberRemove", function(member){
 
 client.on("messageDelete",  function(message) {
 	var currenttime = date.toTimeString();
-	sendUserAMessage("239399070454644736","A message was deleted... It's content was: \n\"" + message.content + "\"\nIt was sent at: " + message.createdAt + ". It was sent by User: " + message.author.username + " In channel: " + message.channel.name)
+	//sendUserAMessage("239399070454644736","A message was deleted... It's content was: \n\"" + message.content + "\"\nIt was sent at: " + message.createdAt + ". It was sent by User: " + message.author.username + " In channel: " + message.channel.name)
 	CEOAlert("A message was deleted... It's content was: \n\"" + message.content + "\"\nIt was sent at: " + message.createdAt + ". It was sent by User: " + message.author.username + " In channel: " + message.channel.name)
 });
 
