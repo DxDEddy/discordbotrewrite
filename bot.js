@@ -12,8 +12,8 @@ const {Client, Attachment} = require('discord.js');
 const client = new Discord.Client();
 const config = require("./config.json");
 
-const ytdl = require('ytdl-core')
-const prefix = "?"
+//const ytdl = require('ytdl-core')
+//const prefix = "?"
 
 
 var date = new Date();
@@ -80,7 +80,7 @@ var i;
  *
 */
 
-function denanSetProfile () {
+function deanSetProfile () {
 
 	client.user.setAvatar(deanBarryPictureArray[generateRandomNumber(deanBarryPictureArray.length)])
 
@@ -139,14 +139,15 @@ client.on('ready', () => {
 	console.log("Ready")
 	
 	//sendUserAMessage(eddyUserID,"Logged is as: "+client.user.tag)
+	CEOAlert("Logged in as: "+client.user.tag)
 
 	//sendOutDBPicture (deanBarryPictureArray,messagearray,tempDeanbarryPictureSubscriptionIDArray)
 	setInterval(sendOutDBPicture, 52400000, deanBarryPictureArray,messagearray,deanbarryPictureSubscriptionIDArray)
 
 	//setInterval(sendUserAMessage,10000,eddyUserID,"test")
 
-	//deanSetProfile()
-	//setInterval(deanSetProfile, 1000000)
+	deanSetProfile()
+	setInterval(deanSetProfile, 1000000)
 
 });
 
