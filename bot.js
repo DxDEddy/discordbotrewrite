@@ -165,7 +165,7 @@ if (message == "ping") {
 //Deanbarry video feed code -- FINISHED
 if (message.substring(0,1) == "!" && msg.author.id == "239399070454644736") {
 	for (i = 0; i < deanbarryVideoFeedIDArray.length; i++) {
-		sendUserAMessage(deanbarryVideoFeedIDArray[i],"----------------------------------\nYou've recieved a message: \n"+message.substring(1))
+		sendUserAMessage(deanbarryVideoFeedIDArray[i],"----------------------------------\nYou've received a message: \n"+message.substring(1))
 	}
 }
 
