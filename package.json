@@ -1,13 +1,13 @@
 {
-  "name": "Deanbarry Bot",
+  "name": "deanbot",
   "description": "This is Eddy's bot for the DxD Discord server",
-  "version": "0.0.0",
+  "version": "2.1.0",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
   "dependencies": {
-    "discord.js": "^12.2.0",
+    "discord.js": "^11.5.1",
     "request": "2.81.0",
     "ytdl-core": "^2.1.7"
   }
